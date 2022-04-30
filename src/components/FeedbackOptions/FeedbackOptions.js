@@ -1,7 +1,7 @@
 import React from "react";
 import {Button} from './FeedbackOptions.styled';
 
-const FeedbackOptions = ({ options, goodIncrement, neutralIncrement, badIncrement }) => {
+const FeedbackOptions = ({ goodIncrement, neutralIncrement, badIncrement }) => {
     return (
         <>
                 <div>

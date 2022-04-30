@@ -31,7 +31,6 @@ export default function FeedbackForm() {
       <Container>
         <Section title="State section">
         <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
           goodIncrement={goodIncrement}
           neutralIncrement={neutralIncrement}
           badIncrement={badIncrement}
