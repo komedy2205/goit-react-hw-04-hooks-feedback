@@ -9,18 +9,27 @@ export default function FeedbackForm() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const goodIncrement = () => {
-    setGood(prevState =>  prevState + 1);
-  };
-  const neutralIncrement = () => {
-    setNeutral(prevState =>  prevState + 1);
-  };
-  const badIncrement = () => {
-    setBad(prevState =>  prevState + 1);
+  const increment = e => {
+    switch (e) {
+      case 'good':
+        setGood(prevState => prevState + 1);
+        break;
+            
+      case 'neutral':
+        setNeutral(prevState => prevState + 1);
+        break;
+      
+      case 'bad':
+        setBad(prevState => prevState + 1);
+        break;
+            
+      default:
+        return;
+    }
   };
 
-    const countTotalFeedback = () => {
-      return good + neutral + bad
+  const countTotalFeedback = () => {
+    return good + neutral + bad
   };
 
   const feedbackPercentage = () => {
@@ -31,9 +40,8 @@ export default function FeedbackForm() {
       <Container>
         <Section title="State section">
         <FeedbackOptions
-          goodIncrement={goodIncrement}
-          neutralIncrement={neutralIncrement}
-          badIncrement={badIncrement}
+          options={['good', 'neutral', 'bad']}
+          increment={increment}
           />
         </Section>
         <p>Statistics</p>
